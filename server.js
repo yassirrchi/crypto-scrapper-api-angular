@@ -2,7 +2,8 @@ const express=require('express');
 const { func } = require('./scrapit');
  
 const app=express()
-
+const cors = require('cors');
+app.use(cors());
 app.get("/",async (req,res)=>{
     const prices=await func();
  res.send({prices})
